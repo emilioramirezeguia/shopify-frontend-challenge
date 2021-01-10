@@ -1,3 +1,4 @@
+import SearchBar from "./components/SearchBar";
 import "./App.scss";
 
 function App() {
@@ -8,6 +9,9 @@ function App() {
           <li>The Shoppies</li>
         </ul>
       </nav>
+      <div className="search-container">
+        <SearchBar />
+      </div>
     </div>
   );
 }

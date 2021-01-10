@@ -1,0 +1,18 @@
+.searchBarContainer {
+  background-color: white;
+  display: flex;
+  width: 50%;
+  padding: 2.5%;
+}
+
+label {
+  display: block;
+}
+
+input {
+  border: 0;
+  border-bottom: 1px solid #eee;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 5% 0;
+  padding: 2.5%;
+}
