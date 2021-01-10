@@ -1,5 +1,7 @@
 .container {
-  background-color: red;
+  background-color: lightgray;
+  height: 100vh;
+  width: 100%;
 }
 
 nav li {
@@ -9,4 +11,10 @@ nav li {
 nav li a {
   display: block;
   text-align: center;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
