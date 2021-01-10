@@ -8,7 +8,7 @@ function SearchBar() {
     setMovie(event.target.value);
   };
   return (
-    <div className="searchBarContainer">
+    <div className="barContainer">
       <form>
         <label>Movie title</label>
         <input
