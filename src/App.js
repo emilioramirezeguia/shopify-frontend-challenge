@@ -1,9 +1,10 @@
+import { connect } from "react-redux";
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
 import Nominations from "./components/Nominations";
 import "./App.scss";
 
-function App() {
+function App(props) {
   return (
     <div className="container">
       <nav className="navbar">
@@ -14,8 +15,17 @@ function App() {
       <SearchBar />
       <SearchResults />
       <Nominations />
+      {props.nominations.length === 5 ? (
+        <div className="banner">Thank you for nominating 5 movies!</div>
+      ) : null}
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    nominations: state.nominations,
+  };
+};
+
+export default connect(mapStateToProps, {})(App);
