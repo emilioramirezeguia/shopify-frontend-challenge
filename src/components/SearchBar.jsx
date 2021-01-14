@@ -1,11 +1,10 @@
-import axios from "axios";
 import React, { useState } from "react";
-import SearchResults from "./SearchResults";
+import { connect } from "react-redux";
+import { fetchMovies } from "../actions/actions";
 import "../sass/SearchBar.scss";
 
-function SearchBar() {
+function SearchBar(props) {
   const [searchTerms, setSearchTerms] = useState("");
-  const [movies, setMovies] = useState("");
 
   const handleChanges = (event) => {
     setSearchTerms(event.target.value);
@@ -13,18 +12,7 @@ function SearchBar() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    axios
-      .get(
-        `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&type=movie&s=${searchTerms}`
-      )
-      .then((response) => {
-        setMovies(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
+    props.fetchMovies(searchTerms);
     setSearchTerms("");
   };
 
@@ -42,9 +30,14 @@ function SearchBar() {
           />
         </form>
       </div>
-      {movies && <SearchResults movies={movies} />}
     </div>
   );
 }
 
-export default SearchBar;
+const mapStateToProps = (state) => {
+  return {
+    isLoading: state.isLoading,
+  };
+};
+
+export default connect(mapStateToProps, { fetchMovies })(SearchBar);

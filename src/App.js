@@ -1,4 +1,6 @@
 import SearchBar from "./components/SearchBar";
+import SearchResults from "./components/SearchResults";
+import Nominations from "./components/Nominations";
 import "./App.scss";
 
 function App() {
@@ -10,6 +12,8 @@ function App() {
         </ul>
       </nav>
       <SearchBar />
+      <SearchResults />
+      <Nominations />
     </div>
   );
 }
