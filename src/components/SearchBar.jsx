@@ -1,24 +1,48 @@
+import axios from "axios";
 import React, { useState } from "react";
+import SearchResults from "./SearchResults";
 import "../sass/SearchBar.scss";
 
 function SearchBar() {
-  const [movie, setMovie] = useState("");
+  const [searchTerms, setSearchTerms] = useState("");
+  const [movies, setMovies] = useState("");
 
   const handleChanges = (event) => {
-    setMovie(event.target.value);
+    setSearchTerms(event.target.value);
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios
+      .get(
+        `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&type=movie&s=${searchTerms}`
+      )
+      .then((response) => {
+        setMovies(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    setSearchTerms("");
+  };
+
   return (
-    <div className="barContainer">
-      <form>
-        <label>Movie title</label>
-        <input
-          type="text"
-          name="movie"
-          placeholder="What's your favorite movie?"
-          value={movie}
-          onChange={handleChanges}
-        />
-      </form>
+    <div>
+      <div className="barContainer" onSubmit={handleSubmit}>
+        <form>
+          <label>Movie title</label>
+          <input
+            type="text"
+            name="movie"
+            placeholder="What's your favorite movie?"
+            value={searchTerms}
+            onChange={handleChanges}
+          />
+        </form>
+      </div>
+      {movies && <SearchResults movies={movies} />}
     </div>
   );
 }
