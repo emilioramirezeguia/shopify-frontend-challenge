@@ -1,6 +1,6 @@
 # Shopify Frontend Challenge
 
-This project was made as part of the Shopify [Front-End Developer Internship](https://github.com/facebook/create-react-app) for Summer 2021.
+This project was made as part of the Shopify [Front-End Developer Internship](https://jobs.smartrecruiters.com/ni/Shopify/ee14b4f1-62ec-4a47-850b-2311c57f855b-front-end-developer-intern-remote-summer-2021) for Summer 2021.
 
 ## Challenge
 
