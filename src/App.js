@@ -1,5 +1,4 @@
 import SearchBar from "./components/SearchBar";
-import SearchResults from "./components/SearchResults";
 import "./App.scss";
 
 function App() {
@@ -11,7 +10,6 @@ function App() {
         </ul>
       </nav>
       <SearchBar />
-      <SearchResults />
     </div>
   );
 }
