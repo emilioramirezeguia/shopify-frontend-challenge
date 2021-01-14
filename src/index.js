@@ -6,7 +6,7 @@ import { reducer } from "./reducers/reducer";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 import App from "./App";
-import "./index.css";
+import "./styles/index.scss";
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 

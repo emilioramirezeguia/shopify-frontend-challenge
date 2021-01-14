@@ -8,6 +8,7 @@ import {
 
 const initialState = {
   isLoading: false,
+  display: false,
   movies: [],
   nominations: [],
   error: "",
@@ -24,6 +25,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
+        display: true,
         movies: action.payload,
         error: "",
       };
