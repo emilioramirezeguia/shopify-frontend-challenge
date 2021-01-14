@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addNomination } from "../actions/actions";
-import "../sass/SearchResults.scss";
 
 // returns true if movie already nominated by user
 const checkIfNominated = (object1, object2) => {

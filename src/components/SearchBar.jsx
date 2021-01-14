@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { fetchMovies } from "../actions/actions";
-import "../sass/SearchBar.scss";
 
 function SearchBar(props) {
   const [searchTerms, setSearchTerms] = useState("");
@@ -17,19 +16,17 @@ function SearchBar(props) {
   };
 
   return (
-    <div>
-      <div className="barContainer" onSubmit={handleSubmit}>
-        <form>
-          <label>Movie title</label>
-          <input
-            type="text"
-            name="movie"
-            placeholder="What's your favorite movie?"
-            value={searchTerms}
-            onChange={handleChanges}
-          />
-        </form>
-      </div>
+    <div className="barContainer" onSubmit={handleSubmit}>
+      <form>
+        <label>Movie title</label>
+        <input
+          type="text"
+          name="movie"
+          placeholder="What's your favorite movie?"
+          value={searchTerms}
+          onChange={handleChanges}
+        />
+      </form>
     </div>
   );
 }

@@ -1,12 +1,14 @@
+@use "base";
+
 .barContainer {
   background-color: white;
-  display: flex;
-  width: 50%;
+  margin: 2.5% 0;
   padding: 2.5%;
 }
 
 label {
   display: block;
+  font-size: base.$h1-size;
 }
 
 input {
@@ -15,4 +17,6 @@ input {
   box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
   margin: 5% 0;
   padding: 2.5%;
+  width: 100%;
+  font-size: base.$h3-size;
 }
